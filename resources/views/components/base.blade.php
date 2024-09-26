@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com">  </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     @vite('resources/css/app.css')
-    <title>{{$title ?? "GTI News -
-        Tudo sobre o GTI vc encontra aqui"}}</title>
-</head>
-<body>
 
+    <title>{{$title ?? "GTI News - Tudo sobre o GTI vc encontra aqui"}}</title>
 
-<nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-    </a>
-    <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-      </svg>
-    </button>
-    <div class="hidden w-full" id="navbar-hamburger">
-      <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-        <li>
-          <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Services</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Pricing</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Contact</a>
-        </li>
-      </ul>
+  </head>
+
+ <body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-black text-white">
+    <div class="container mx-auto flex justify-between items-center py-2 px-4">
+      <div class="flex items-center">
+      
+    <!-- botão 3 barras para menu -->
+      <button class="text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    <!-- LOGO -->
+      <div class="mx-6">
+        <a href="/"><img src="" alt="LOGO"></a>
+      </div>
+
+      </div>
+
+    <!-- botoes laterais -->
+        <div class="flex items-center space-x-4">
+          @auth
+          <div class="text-white">Tu ta logado brother</div>
+          <button class="bg-red-600 text-white px-4 py-2 rounded"><a href="">Sair</a></button>
+
+          @else
+        <button class="bg-red-600 text-white px-4 py-2 rounded">
+            <a href="{{route('telaLogin')}}">Entrar</a>
+          </button>
+          <button class="bg-gray-600 text-white px-4 py-2 rounded">
+            <a href="{{route('telaCadastro')}}">Cadastrar</a>
+          </button>
+          @endauth
+
+        </div>
     </div>
-  </div>
-</nav>
+  </header>
 
 {{$slot}}
-</body>
+
 </html>

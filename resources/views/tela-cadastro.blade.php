@@ -1,8 +1,10 @@
 <x-base>
 <section class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Crie sua Conta</h2>
-      <form action="{{route('SalvaUsuario')}}" method="post">
+      
+    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Crie sua Conta</h2>
+      
+        <form action="{{route('SalvaUsuario')}}" method="post">
         @csrf
           <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
               <div class="sm:col-span-2">
@@ -26,7 +28,7 @@
           <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
               Cadastrar
           </button>
-      </form>
+        </form>
   </div>
 </section>
 </x-base>
