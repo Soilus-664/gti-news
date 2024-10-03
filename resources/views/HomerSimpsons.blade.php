@@ -1,6 +1,7 @@
 <x-baseHome>
     <!-- Main Content -->
     <main class="container mx-auto mt-4 px-4">
+    @csrf
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         
     <!-- Main Article -->

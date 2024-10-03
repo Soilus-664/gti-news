@@ -16,6 +16,8 @@ Route::view('/cadastro', 'tela-cadastro')->name('telaCadastro');
 
 Route::view('/login', 'tela-login')->name('telaLogin');
 
+Route::view('/home','HomerSimpsons')->name('Home');
+
 Route::post('/salva-usuario',
     function(Request $request){
         $user = new User();
@@ -23,7 +25,7 @@ Route::post('/salva-usuario',
         $user ->email = $request->email;
         $user ->password = $request->senha;
         $user ->save();
-            return "Salvo com Sucesso";
+        return redirect()->route('Home');  
     }        
 ) ->name('SalvaUsuario');
 
@@ -38,7 +40,7 @@ function (Request $request)
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('HomerSimpsons');
+            return redirect()->intended('/');
         }
  
         return back()->withErrors([
@@ -46,3 +48,11 @@ function (Request $request)
         ])->onlyInput('email');
     }
 )->name('Logar');
+
+route::get('/logout', 
+    function(Request $request){
+    Auth::logout();
+    $request->session()->regenerate();
+    return redirect()->route('Home');  
+}
+    )->name('logout');

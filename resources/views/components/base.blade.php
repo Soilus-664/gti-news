@@ -34,7 +34,7 @@
         <div class="flex items-center space-x-4">
           @auth
           <div class="text-white">Tu ta logado brother</div>
-          <button class="bg-red-600 text-white px-4 py-2 rounded"><a href="">Sair</a></button>
+          <button class="bg-red-600 text-white px-4 py-2 rounded"><a href="{{route('logout')}}">Sair</a></button>
 
           @else
         <button class="bg-red-600 text-white px-4 py-2 rounded">
