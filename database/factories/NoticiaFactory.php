@@ -17,7 +17,7 @@ class NoticiaFactory extends Factory
     public function definition(): array
     {
         return [
-           'titulo'=> fake()->sentence(),
+           'Titulo'=> fake()->sentence(),
            'resumo'=> fake()->paragraph(1),
            'conteudo'=> fake()->paragraph(10),
            'data'=> fake()->dateTimeThisYear(),

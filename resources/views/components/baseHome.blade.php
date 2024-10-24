@@ -70,7 +70,7 @@
     
       <div x-show="menu" id="userDropdowns1" class="absolute z-10 w-56 divide-y my-4 divide-gray-100 overflow-hidden overflow-y-auto bg-white antialiased shadow dark:divide-gray-600 dark:bg-black">
             <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
-              <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Gerenciar Noticias </a></li>
+              <li><a href="{{route('gerenciaNoticias')}}" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Gerenciar Noticias </a></li>
               <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Gerenciar Usuarios </a></li>
               <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Financeiro </a></li>
               <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Estatísticas </a></li>
