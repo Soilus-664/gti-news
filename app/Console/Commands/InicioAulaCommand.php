@@ -25,6 +25,10 @@ class InicioAulaCommand extends Command
      */
     public function handle()
     {
+        // Chamar o comando de instalação e inicialização do XAMPP
+        $this->info('Verificando e instalando o XAMPP...');
+        $this->call('instala:xampp');
+
         // Executando composer install
         $this->info('Executando composer install...');
         exec('composer install');
@@ -57,6 +61,10 @@ class InicioAulaCommand extends Command
         $this->info('Abrindo o projeto no navegador...');
         sleep(10); // Espera 10 segundos para garantir que o servidor esteja pronto
         exec('start http://localhost:8000');
+
+        // abre o phpMyAdmin
+        $this->info('Abrindo o phpMyAdmin no navegador...');
+        exec('start http://localhost/phpmyadmin');
 
         $this->newLine();
         $this->alert('Tudo Pronto! Boa aula!! ;D');
