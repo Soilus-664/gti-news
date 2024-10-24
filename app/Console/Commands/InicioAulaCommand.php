@@ -58,7 +58,6 @@ class InicioAulaCommand extends Command
         sleep(10); // Espera 10 segundos para garantir que o servidor esteja pronto
         exec('start http://localhost:8000');
 
-
         $this->newLine();
         $this->alert('Tudo Pronto! Boa aula!! ;D');
         $this->newLine();
