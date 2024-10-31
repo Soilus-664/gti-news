@@ -62,7 +62,6 @@ route::get('/gerenciar-noticias',
     function(){
         
         $Noticias = Noticia::all();
-
         return view('gerencia-noticias', compact('Noticias'));
     }
     )->name('gerenciaNoticias');

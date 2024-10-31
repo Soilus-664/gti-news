@@ -1,0 +1,1 @@
+estudar o Livewire para mexer com edições dinamicas
