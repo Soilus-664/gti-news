@@ -66,3 +66,11 @@ route::get('/gerenciar-noticias',
     }
     )->name('gerenciaNoticias');
 
+route::get('/cadastra-noticia', 
+function(){
+    
+    $Noticias = new Noticia();
+
+    return view('cadastra-noticia', compact('Noticias'));
+}
+)->name('cadastraNoticia');

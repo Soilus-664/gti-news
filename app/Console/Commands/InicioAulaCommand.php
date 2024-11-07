@@ -39,7 +39,7 @@ class InicioAulaCommand extends Command
 
         // Executando migrações do Laravel
         $this->info('Executando migrações do banco de dados...');
-        exec('php artisan migrate --force', $output, $return_var);
+        exec('php artisan migrate --seed --force', $output, $return_var);
         foreach ($output as $line) {
             $this->line($line);
         }
