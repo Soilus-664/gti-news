@@ -4,7 +4,7 @@
     <section class="bg-white dark:bg-gray-900 min-h-screen">
         
     <h1 class="px-6 py-4">  Gestão de Noticias  </h1>
-
+    <button class="border"><a href="{{route('cadastraNoticia')}}">ADD NOTICIA</a></button>
         <div>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-4">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

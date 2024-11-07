@@ -61,16 +61,33 @@ route::get('/logout',
 route::get('/gerenciar-noticias', 
     function(){
         
-        $Noticias = Noticia::all();
+        $Noticias = Noticia::orderBy('id','desc')->get();
         return view('gerencia-noticias', compact('Noticias'));
     }
     )->name('gerenciaNoticias');
 
-route::get('/cadastra-noticia', 
+route::get('/cadastra-noticias', 
 function(){
     
     $Noticias = new Noticia();
 
-    return view('cadastra-noticia', compact('Noticias'));
+    return view('cadastra-noticias', compact('Noticias'));
 }
 )->name('cadastraNoticia');
+
+Route::post('/salva-noticia',
+    
+    function(Request $request){
+        $Noticias = new Noticia();
+        $Noticias ->Titulo = $request->titulo;
+        $Noticias ->resumo = $request->resumo;
+        $Noticias ->conteudo = $request->conteudo;
+        $Noticias ->capa = $request->capa;
+        
+        $Noticias ->data = now();
+        $Noticias ->user_id = Auth::id();
+        $Noticias ->save();
+
+        return redirect()->route('cadastraNoticia');  
+    }        
+) ->name('salvaNoticia');
