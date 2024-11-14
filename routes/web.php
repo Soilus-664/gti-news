@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Noticia;
+use App\Http\Livewire\CadastraNoticias;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\RedirectResponse;
@@ -91,3 +92,51 @@ Route::post('/salva-noticia',
         return redirect()->route('cadastraNoticia');  
     }        
 ) ->name('salvaNoticia');
+
+Route::get(
+    '/exibir-noticia/{noticia}', 
+    
+    function (Noticia $Noticia) {
+    
+    // $Noticia = Noticia::find($Noticia)
+    return view('exibir-noticia', compact('Noticia'));
+}
+)->name('ExibeNoticia');
+
+Route::get(
+    '/edita-noticias/{noticia}', 
+    
+    function (Noticia $noticia) {
+    
+    // $Noticia = Noticia::find($Noticia)
+    return view('edita-noticias', compact('noticia'));
+}
+)->name('EditaNoticia');
+
+Route::post(
+    '/altera-noticia/{noticia}',
+    
+    function(Request $request, Noticia $Noticias){
+
+        $Noticias ->Titulo = $request->titulo;
+        $Noticias ->resumo = $request->resumo;
+        $Noticias ->conteudo = $request->conteudo;
+        $Noticias ->capa = $request->capa;
+        
+        $Noticias ->data = now();
+        $Noticias ->user_id = Auth::id();
+        $Noticias ->save();
+
+        return redirect()->route('gerenciaNoticias');  
+    }        
+) ->name('alteraNoticia');
+
+Route::get(
+    '/deleta-noticia/{noticia}', 
+    
+    function (Noticia $noticia) {
+    
+    $noticia->delete();
+    return redirect()->route('gerenciaNoticias');
+}
+)->name('DeletaNoticia');

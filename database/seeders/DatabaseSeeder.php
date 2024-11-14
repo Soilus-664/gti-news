@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         User::factory(5)->create();
-        Noticia::factory(30)->create();
+        Noticia::factory(10)->create();
 
     }
 }

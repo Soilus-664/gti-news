@@ -34,9 +34,9 @@
                                     
                                         <div x-show="menu" id="userDropdowns1" class="absolute end-0 z-10 w-56 divide-y -my-6 mx-8 divide-gray-100 overflow-hidden overflow-y-auto bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-900 rounded-lg">
                                             <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
-                                                <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Editar Titulo </a></li>
-                                                <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Editar Conteudo </a></li>
-                                                <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-red-600"> Excluir </a></li>
+                                                <li><a href="{{route('ExibeNoticia',$Noticia)}}" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Exibir Noticia </a></li>
+                                                <li><a href="{{route('EditaNoticia',$Noticia)}}" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600"> Editar Noticia </a></li>
+                                                <li><a href="{{route('DeletaNoticia',$Noticia)}}" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-red-600"> Excluir </a></li>
                                             </ul>
                                         </div>  
 
