@@ -19,6 +19,8 @@ Route::view('/cadastro', 'tela-cadastro')->name('telaCadastro');
 
 Route::view('/login', 'tela-login')->name('telaLogin');
 
+Route::redirect('/login2', '/login')->name('login');
+
 Route::view('/home','HomerSimpsons')->name('Home');
 
 Route::post('/salva-usuario',
@@ -50,7 +52,7 @@ function (Request $request)
             'email' => 'Email ou senha inválidos.',
         ])->onlyInput('email');
     }
-)->name('Logar');
+)->name('logar');
 
 route::get('/logout', 
     function(Request $request){
@@ -66,33 +68,7 @@ route::get('/gerenciar-noticias',
         $Noticias = Noticia::orderBy('id','desc')->get();
         return view('gerencia-noticias', compact('Noticias'));
     }
-    )->name('gerenciaNoticias');
-
-route::get('/cadastra-noticias', 
-function(){
-    
-    $Noticias = new Noticia();
-
-    return view('cadastra-noticias', compact('Noticias'));
-}
-)->name('cadastraNoticia');
-
-Route::post('/salva-noticia',
-    
-    function(Request $request){
-        $Noticias = new Noticia();
-        $Noticias ->Titulo = $request->titulo;
-        $Noticias ->resumo = $request->resumo;
-        $Noticias ->conteudo = $request->conteudo;
-        $Noticias ->capa = $request->capa;
-        
-        $Noticias ->data = now();
-        $Noticias ->user_id = Auth::id();
-        $Noticias ->save();
-
-        return redirect()->route('cadastraNoticia');  
-    }        
-) ->name('salvaNoticia');
+    )->name('gerenciaNoticias')->middleware('auth');
 
 Route::get(
     '/exibir-noticia/{noticia}', 
@@ -103,34 +79,6 @@ Route::get(
     return view('exibir-noticia', compact('Noticia'));
 }
 )->name('ExibeNoticia');
-
-Route::get(
-    '/edita-noticias/{noticia}', 
-    
-    function (Noticia $noticia) {
-    
-    // $Noticia = Noticia::find($Noticia)
-    return view('edita-noticias', compact('noticia'));
-}
-)->name('EditaNoticia');
-
-Route::post(
-    '/altera-noticia/{noticia}',
-    
-    function(Request $request, Noticia $Noticias){
-
-        $Noticias ->Titulo = $request->titulo;
-        $Noticias ->resumo = $request->resumo;
-        $Noticias ->conteudo = $request->conteudo;
-        $Noticias ->capa = $request->capa;
-        
-        $Noticias ->data = now();
-        $Noticias ->user_id = Auth::id();
-        $Noticias ->save();
-
-        return redirect()->route('gerenciaNoticias');  
-    }        
-) ->name('alteraNoticia');
 
 Route::get(
     '/deleta-noticia/{noticia}', 

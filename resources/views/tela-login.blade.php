@@ -2,7 +2,7 @@
 <section class="bg-white dark:bg-gray-900 min-h-screen">
     <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
     
-    <form class="max-w-sm mx-auto" action="{{route('Logar')}}" method="post">
+    <form class="max-w-sm mx-auto" action="{{route('logar')}}" method="post">
     
     @csrf
             @if ($errors->any())
