@@ -13,7 +13,7 @@
         <button @click="AddNoticia = true" class="border text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg justify-end">
             NOVA NOTICIA
         </button>
-        <div x-show="AddNoticia" class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-black" @click.away="AddNoticia = false">
+        <div x-show="AddNoticia" x-cloak class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-black" @click.away="AddNoticia = false">
             @livewire('cadastra-noticias')
         </div>
     </div>
@@ -55,7 +55,7 @@
                                                         <button @click="EditaNoticia = true" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-blue-600">
                                                             Editar Noticia                                        
                                                         </button>
-                                                        <div x-show="EditaNoticia" class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-black" @click.away="EditaNoticia = false">
+                                                        <div x-show="EditaNoticia" x-cloak class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-black" @click.away="EditaNoticia = false">
                                                                 @livewire('edita-noticia', ['noticia' => $Noticia])
                                                         </div>
                                                     </div>

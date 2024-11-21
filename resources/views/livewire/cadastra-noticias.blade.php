@@ -1,5 +1,5 @@
 <div>
-    <h5 id="drawer-label" class="inline-flex items-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400"> Nova Notícia </h5>
+    <h5 id="drawer-label" class="items-center text-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400"> Nova Notícia </h5>
      
         <form wire:submit.prevent="SalvaNoticia" class="mb-6">
             @csrf

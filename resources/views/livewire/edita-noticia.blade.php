@@ -1,5 +1,5 @@
 <div>
-    <h5 id="drawer-label" class="inline-flex items-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+    <h5 id="drawer-label" class="text-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
         Editar Noticia
     </h5>
     
