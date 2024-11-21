@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Models\Noticia;
 use App\Http\Livewire\CadastraNoticias;
+use App\Http\Livewire\EditaNoticia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\RedirectResponse;
