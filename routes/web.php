@@ -10,8 +10,13 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('HomerSimpsons');
-});
+    $Noticias = Noticia::latest()->get();
+    return view('HomerSimpsons', compact('Noticias'));
+})->name('home');
+
+Route::get('/{any}', function () {
+    return redirect()->route('home');
+})->where('any', 'home|Home|HomerSimpsons');
 
 Route::view('/teste', 'tela-teste');        
 

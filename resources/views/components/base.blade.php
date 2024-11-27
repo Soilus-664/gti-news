@@ -25,7 +25,7 @@
 
     <!-- LOGO -->
       <div class="mx-6">
-        <a href="/"><img src="" alt="LOGO"></a>
+        <a href="/"><img src="" alt="LOGO (Não tem uma)"></a>
       </div>
 
       </div>

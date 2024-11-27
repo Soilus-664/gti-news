@@ -5,15 +5,15 @@
 
     <section class="bg-white dark:bg-gray-900 min-h-screen">
 
-    <h1 class="px-6 py-4">  Gestão de Noticias  </h1>
+    <h1 class="px-6 py-4 text-4xl text-center">  Gestão de Noticias  </h1>
 
     <!-- botão para criar noticias com livewire -->
-    <div x-data="{ AddNoticia: false }" class="justify-self-end mx-4">
+    <div x-data="{ AddNoticia: false }" class="mx-4 flex justify-end">
 
-        <button @click="AddNoticia = true" class="border text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg justify-end">
+        <button @click="AddNoticia = true" class="text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg justify-end">
             NOVA NOTICIA
         </button>
-        <div x-show="AddNoticia" x-cloak class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-black" @click.away="AddNoticia = false">
+        <div x-show="AddNoticia" x-cloak class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-96 hover:w-1/5 dark:bg-black" @click.away="AddNoticia = false">
             @livewire('cadastra-noticias')
         </div>
     </div>
