@@ -23,9 +23,17 @@ class DatabaseSeeder extends Seeder
             'cargo' => '1',
             'password' => Hash::make('123'),
         ]);
+
+        Noticia::factory()->create([
+            'Titulo' => 'UM SITE MUITO BACANA',
+            'resumo' => 'E isso é tudo pessoal',
+            'conteudo' => 'Seila oque botar aqui',
+            'capa' => 'https://sm.ign.com/t/ign_br/screenshot/default/elden-ring-imagem-principal-sajscyx_gz35.960.jpg',
+        ]);
         
         User::factory(5)->create();
         Noticia::factory(10)->create();
+
 
     }
 }

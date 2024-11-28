@@ -36,10 +36,10 @@
             Ao vivo
           </a>
         </div>
-        <a href="#">Política</a>
-        <a href="#">Economia</a>
-        <a href="#">Esportes</a>
-        <a href="#">Pop</a>
+        <a href="{{route('ContadorBacana')}}">Política</a>
+        <a href="{{route('ContadorBacana')}}">Economia</a>
+        <a href="{{route('ContadorBacana')}}">Esportes</a>
+        <a href="{{route('ContadorBacana')}}">Pop</a>
 
         @auth
         @if(Auth::user()->cargo == 1 or Auth::user()->cargo == 2)

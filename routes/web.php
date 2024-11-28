@@ -10,7 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    $Noticias = Noticia::latest()->get();
+    $Noticias = Noticia::latest()->paginate(8);
     return view('HomerSimpsons', compact('Noticias'));
 })->name('home');
 
@@ -70,7 +70,8 @@ route::get('/logout',
 route::get('/gerenciar-noticias', 
     function(){
         
-        $Noticias = Noticia::orderBy('id','desc')->get();
+        $Noticias = Noticia::orderBy('id','desc')->paginate(5)->withQueryString();
+
         return view('gerencia-noticias', compact('Noticias'));
     }
     )->name('gerenciaNoticias')->middleware('auth');
@@ -94,3 +95,5 @@ Route::get(
     return redirect()->route('gerenciaNoticias');
 }
 )->name('DeletaNoticia');
+
+Route::view('/Contador', 'default-pagina')->name('ContadorBacana');

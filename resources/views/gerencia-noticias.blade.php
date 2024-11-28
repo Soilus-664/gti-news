@@ -13,13 +13,13 @@
         <button @click="AddNoticia = true" class="text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg justify-end">
             NOVA NOTICIA
         </button>
-        <div x-show="AddNoticia" x-cloak class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-96 hover:w-1/5 dark:bg-black" @click.away="AddNoticia = false">
+        <div x-show="AddNoticia" x-cloak class="fixed top-14 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-1/6 hover:w-1/5 dark:bg-black" @click.away="AddNoticia = false">
             @livewire('cadastra-noticias')
         </div>
     </div>
 
         <!-- toda a tabela -->
-        <div>
+        
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-4">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -69,7 +69,11 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
-        </div>
+            </table>     
+            <div>
+            {{ $Noticias->onEachSide(5)->links() }}
+            </div>
+            
     </section>
+    
 </x-base>
