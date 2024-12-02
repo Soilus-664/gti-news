@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         User::factory(5)->create();
-        Noticia::factory(10)->create();
+        Noticia::factory(100)->create();
 
 
     }
